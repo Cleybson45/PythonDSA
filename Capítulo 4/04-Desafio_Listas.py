@@ -19,41 +19,56 @@ nomes = []
 quantidades = []
 categorias = []
 
-print("\n*****\n" \
-    "BEM VINDO AO ESTOQUE!\n" \
-    "**********\n")
-print("Menu: \n" \
-    " 1 - Cadastrar Ativo \n" \
-    " 2 - Remover Ativo \n" \
-    " 3 - Listar Ativos \n" \
-    " 4 - Listar por Categoria \n" \
-    " 5 - Ordenar por nome ou quantidade \n" \
-    " 6 - Calcular quantidade em Estoque\n")
-opcao_menu = input("Selecione a opção: ")
+while True:
+    print("\n♦♦♦♦♦♦♦\n" \
+        "BEM VINDO AO ESTOQUE!\n" \
+        "♦♦♦♦♦♦♦♦♦♦♦♦\n")
+    print("Menu: \n" \
+        " 1 - Cadastrar Ativo \n" \
+        " 2 - Remover Ativo \n" \
+        " 3 - Listar Ativos \n" \
+        " 4 - Listar por Categoria \n" \
+        " 5 - Ordenar por nome ou quantidade \n" \
+        " 6 - Calcular quantidade em Estoque\n")
+    opcao_menu = input("Selecione a opção: ")
 
-#Função de Cadastra Ativos no Estoque
-def cadastra_ativo(nome, qtd, categoria):
-    nomes.append(nome)
-    quantidades.append(qtd)
-    categorias.append(categoria)
-    print(f"\nAtivo adicionado.. \nNome: {nome} | Quantidade: {qtd} | Categoria: {categoria}")
+    #Função para Cadastrar Ativos no Estoque
+    def cadastra_ativo(nome, qtd, categoria):
+        nomes.append(nome)
+        quantidades.append(qtd)
+        categorias.append(categoria)
+        print(f"\nAtivo adicionado.. \nNome: {nome} | Quantidade: {qtd} | Categoria: {categoria}")
 
-if opcao_menu == "1":
-    nome = input("Nome do Produto: ")
-    qtd = int(input("Quantidade do Produto: "))
-    cat = input("Categoria do Produto: ")
-    cadastra_ativo(nome, qtd, cat)
+    # Função para Remover Ativos no Estoque
+    def remove_ativo(nome, qtd, categoria):
+        nomes.remove(nome)
+        quantidades.remove(qtd)
+        categorias.remove(categoria)
+        print(f"\nAtivo Removido.. \nNome: {nome} | Quantidade: {qtd} | Categoria: {categoria}")
 
-'''elif opcao_menu == "2":
-    nome = input("Nome do Produto: ")
-    qtd = int(input("Quantida do Produto: "))
-    remove_ativo(nome, qtd)
+    # Função para Listar os Ativos em Estoque
+    def ativos_estoque():
+        for nome, qtd, cat in zip(nomes,quantidades,categorias):
+            print(f"Nome: {nome} | Quantidade: {qtd} | Categoria: {cat}")
 
-elif opcao_menu == "3":
-    print("\Ativos em Estoque...\n")
-    for nome, qtd, cat in zip(nomes, quantidades, categorias):
-        print(f"Nome: {nome}, Quantidade: {qtd}, Categoria: {cat}")
 
-elif opcao_menu == "4":
-    cat = input("Categoria: ")
-    por_categoria(nome, qtd, cat)'''
+    if opcao_menu == "1":
+        nome = input("Nome do Produto: ")
+        qtd = int(input("Quantidade do Produto: "))
+        cat = input("Categoria do Produto: ")
+        cadastra_ativo(nome, qtd, cat)
+
+    elif opcao_menu == "2":
+        nome = input("Nome do Produto: ")
+        qtd = int(input("Quantida do Produto: "))
+        remove_ativo(nome, qtd)
+
+    elif opcao_menu == "3":
+        print("\Ativos em Estoque...\n")
+        ativos_estoque()
+        '''for nome, qtd, cat in zip(nomes, quantidades, categorias):
+            print(f"Nome: {nome}, Quantidade: {qtd}, Categoria: {cat}")'''
+
+    '''elif opcao_menu == "4":
+        cat = input("Categoria: ")
+        por_categoria(nome, qtd, cat)'''
