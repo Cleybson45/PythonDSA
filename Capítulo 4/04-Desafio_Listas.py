@@ -15,14 +15,6 @@ Cada produto deve ter: Nome, Quantidade e Categoria.
 7. Calcular a quantidade total de itens no estoque.
 '''
 
-'''Pseudocódigo:
-1. Definir as listas
-2. Criar uma função para povoar as listas com interação do usuário
-3. Criar função para apresentar os equipamentos cadastrados
-5. Criar uma função para remover equipamentos cadastrados
-6. Criar uma função para mostr  
-'''
-
 nomes = []
 quantidades = []
 categorias = []
@@ -37,4 +29,31 @@ print("Menu: \n" \
     " 4 - Listar por Categoria \n" \
     " 5 - Ordenar por nome ou quantidade \n" \
     " 6 - Calcular quantidade em Estoque\n")
-opcao_meno = input("Selecione a opção: ")
+opcao_menu = input("Selecione a opção: ")
+
+#Função de Cadastra Ativos no Estoque
+def cadastra_ativo(nome, qtd, categoria):
+    nomes.append(nome)
+    quantidades.append(qtd)
+    categorias.append(categoria)
+    print(f"\nAtivo adicionado.. \nNome: {nome} | Quantidade: {qtd} | Categoria: {categoria}")
+
+if opcao_menu == "1":
+    nome = input("Nome do Produto: ")
+    qtd = int(input("Quantidade do Produto: "))
+    cat = input("Categoria do Produto: ")
+    cadastra_ativo(nome, qtd, cat)
+
+'''elif opcao_menu == "2":
+    nome = input("Nome do Produto: ")
+    qtd = int(input("Quantida do Produto: "))
+    remove_ativo(nome, qtd)
+
+elif opcao_menu == "3":
+    print("\Ativos em Estoque...\n")
+    for nome, qtd, cat in zip(nomes, quantidades, categorias):
+        print(f"Nome: {nome}, Quantidade: {qtd}, Categoria: {cat}")
+
+elif opcao_menu == "4":
+    cat = input("Categoria: ")
+    por_categoria(nome, qtd, cat)'''
