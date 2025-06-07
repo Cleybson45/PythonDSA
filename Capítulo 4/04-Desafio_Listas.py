@@ -40,11 +40,15 @@ while True:
         print(f"\nAtivo adicionado.. \nNome: {nome} | Quantidade: {qtd} | Categoria: {categoria}")
 
     # Função para Remover Ativos no Estoque
-    def remove_ativo(nome, qtd, categoria):
-        nomes.remove(nome)
-        quantidades.remove(qtd)
-        categorias.remove(categoria)
-        print(f"\nAtivo Removido.. \nNome: {nome} | Quantidade: {qtd} | Categoria: {categoria}")
+    def remove_ativo(nome):
+        if nome in nomes: 
+            indice = nomes.index(nome)
+            nomes.pop(indice)
+            quantidades.pop(indice)
+            categorias.pop(indice)
+            print(f"\n Ativo Removido..")
+        else: 
+            print("Produto Não Encontrado.")
 
     # Função para Listar os Ativos em Estoque
     def ativos_estoque():
@@ -60,15 +64,13 @@ while True:
 
     elif opcao_menu == "2":
         nome = input("Nome do Produto: ")
-        qtd = int(input("Quantida do Produto: "))
-        remove_ativo(nome, qtd)
+        remove_ativo(nome)
 
     elif opcao_menu == "3":
         print("\Ativos em Estoque...\n")
         ativos_estoque()
-        '''for nome, qtd, cat in zip(nomes, quantidades, categorias):
-            print(f"Nome: {nome}, Quantidade: {qtd}, Categoria: {cat}")'''
 
     '''elif opcao_menu == "4":
         cat = input("Categoria: ")
         por_categoria(nome, qtd, cat)'''
+
