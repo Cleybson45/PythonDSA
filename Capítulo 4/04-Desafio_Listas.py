@@ -55,6 +55,15 @@ while True:
         for nome, qtd, cat in zip(nomes,quantidades,categorias):
             print(f"Nome: {nome} | Quantidade: {qtd} | Categoria: {cat}")
 
+    # Função para Listar por Categoria
+    def lista_por_categoria(cat):
+        if cat in categorias:
+            for x in range(len(categorias)):
+                if categorias[x] == cat:
+                    print(f"Nome: {nomes[x]} | Quantidade: {quantidades[x]} | Categoria: {categorias[x]}")   
+        else:
+            print("Categoria Não Encontrada")
+
 
     if opcao_menu == "1":
         nome = input("Nome do Produto: ")
@@ -70,7 +79,7 @@ while True:
         print("\Ativos em Estoque...\n")
         ativos_estoque()
 
-    '''elif opcao_menu == "4":
+    elif opcao_menu == "4":
         cat = input("Categoria: ")
-        por_categoria(nome, qtd, cat)'''
+        lista_por_categoria(cat)
 
