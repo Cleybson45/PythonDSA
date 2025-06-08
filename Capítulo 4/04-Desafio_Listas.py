@@ -64,6 +64,16 @@ while True:
         else:
             print("Categoria Não Encontrada")
 
+    # Função para Ordenar por Nome ou Quantidade
+    def ordenaLista(estoque, ordem):
+        if ordem == "Nome":
+            estoque.sort(key=lambda item: item[0])
+            for nome, qtd, cat in estoque:
+                print(f"\nNome: {nome} | Quantidade: {qtd} | Categoria: {cat}")
+        else: 
+            estoque.sort(key=lambda item: item[1])
+            for nome, qtd, cat in estoque:
+                print(f"\nNome: {nome} | Quantidade: {qtd} | Categoria: {cat}")
 
     if opcao_menu == "1":
         nome = input("Nome do Produto: ")
@@ -83,3 +93,7 @@ while True:
         cat = input("Categoria: ")
         lista_por_categoria(cat)
 
+    elif opcao_menu == "5":
+        estoque = list(zip(nomes, quantidades, categorias))
+        ordem = input("Deseja ordenar por Nome ou Quantidade? ")
+        ordenaLista(estoque, ordem)
