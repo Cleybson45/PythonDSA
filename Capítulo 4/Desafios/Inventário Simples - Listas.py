@@ -19,7 +19,9 @@ nomes = []
 quantidades = []
 categorias = []
 
+
 while True:
+    estoque = list(zip(nomes, quantidades, categorias))
     print("\n♦♦♦♦♦♦♦\n" \
         "BEM VINDO AO ESTOQUE!\n" \
         "♦♦♦♦♦♦♦♦♦♦♦♦\n")
@@ -29,7 +31,8 @@ while True:
         " 3 - Listar Ativos \n" \
         " 4 - Listar por Categoria \n" \
         " 5 - Ordenar por nome ou quantidade \n" \
-        " 6 - Calcular quantidade em Estoque\n")
+        " 6 - Calcular quantidade em Estoque\n" \
+        " 0 - Sair")
     opcao_menu = input("Selecione a opção: ")
 
     #Função para Cadastrar Ativos no Estoque
@@ -75,6 +78,11 @@ while True:
             for nome, qtd, cat in estoque:
                 print(f"\nNome: {nome} | Quantidade: {qtd} | Categoria: {cat}")
 
+    # Função para Calcular a Quantidade Total de ativos no Estoque
+    def qtdTotal():
+        qtdTotal = sum([item[1] for item in estoque])
+        print(f"\nTemos um total de {qtdTotal} itens em Estoque")
+
     if opcao_menu == "1":
         nome = input("Nome do Produto: ")
         qtd = int(input("Quantidade do Produto: "))
@@ -94,6 +102,15 @@ while True:
         lista_por_categoria(cat)
 
     elif opcao_menu == "5":
-        estoque = list(zip(nomes, quantidades, categorias))
         ordem = input("Deseja ordenar por Nome ou Quantidade? ")
         ordenaLista(estoque, ordem)
+    
+    elif opcao_menu == "6":
+        qtdTotal()
+    
+    elif opcao_menu == "0":
+        print("\nTchau, até logo..\n")
+        break
+
+    else: 
+        print("Opção Inválida")
