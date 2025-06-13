@@ -38,7 +38,7 @@ cd PythonDSA/Capítulo\ 4/Desafios
 
 O programa será executado no terminal e apresentará um menu interativo para manipular o estoque.
 
-## EXEMPLOS DE USO
+## 🧪 EXEMPLOS DE USO
 
 ### Menu Interativo:
 
