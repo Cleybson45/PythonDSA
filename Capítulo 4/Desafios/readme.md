@@ -69,7 +69,7 @@ O programa será executado no terminal e apresentará um menu interativo para ma
 ![Calculando Total](./Imagens/calculaTotal.png)
 
 
-## 🎓 Aprendizados 📖
+## 🎓 Aprendizados
 
 Este foi o primeiro projeto que consegui concluir desde o início, o que por si só já representa um marco importante. Ao desenvolvê-lo, não só pratiquei conceitos de Python (como listas, funções e interação com o usuário), como também exercitei o uso do Git e do GitHub para versionamento e documentação. A disciplina para seguir até o fim me ensinou muito sobre resiliência — uma habilidade essencial na trajetória de qualquer desenvolvedor.
  
