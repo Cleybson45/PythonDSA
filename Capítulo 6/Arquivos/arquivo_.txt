@@ -1,0 +1,1 @@
+Manipulando arquivos em Python, adicionando conteúdo sem sobrescrever o arquivo todo.
