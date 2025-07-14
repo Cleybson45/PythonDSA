@@ -1,1 +1,3 @@
-Esse é um texto, que na linha abaixo será acrescido./nEssa linha acresce o texto que foi iniciado acima. Mas logo virá uma outra linha./nÚltima linha prometo, acho até que não precisava de três, mas cá estamos e para lá vamos, rsrs 
+Esse é um texto que na linha abaixo será acrescido.
+Essa linha acresce o texto que foi iniciado acima. Mas logo virá uma outra linha.
+Última linha prometo, acho até que não precisava de três, mas cá estamos e para lá vamos, rsrs
