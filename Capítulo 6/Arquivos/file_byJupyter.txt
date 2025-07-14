@@ -1,0 +1,3 @@
+Este arquivos foi gerado pelo Jupyter Notebook
+Mostra que ele também pode gerar arquivos, mas acredito que talvez isso não seja muito usado entre os analistas de dados.
+Mesmo assim, é uma boa forma de gerar arquivos, pois o Jupyter grava ele no final e salva do diretório.
